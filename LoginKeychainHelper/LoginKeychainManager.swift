@@ -36,7 +36,7 @@ public class LoginKeychainManager {
     public func secureCredentials() throws -> SecureCredentials {
         let query: [String: Any] = [kSecClassKey: kSecClassGenericPassword,
                                        kSecAttrAccountKey: kSecAttrAccountValue,
-                                       kSecReturnDataKey: kCFBooleanTrue,
+                                       kSecReturnDataKey: kCFBooleanTrue as Any,
                                        kSecAttrServiceKey: kSecAttrServiceValue,
                                        kSecMatchLimitKey: kSecMatchLimitOne]
         
