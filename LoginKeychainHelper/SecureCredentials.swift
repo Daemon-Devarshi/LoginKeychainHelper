@@ -1,6 +1,6 @@
 //
 //  SecureCredentials.swift
-//  ACEApp
+//  Copyright Devarshi Kulshreshtha (devarshi.kulshreshtha@gmail.com)
 //
 
 import Foundation
