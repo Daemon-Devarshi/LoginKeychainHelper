@@ -10,6 +10,9 @@ public struct SecureCredentials : Codable {
     public var userName: String
     public var userPassword: String
     public var firebaseUID: String
+    public var gToken: String
+    public var fbToken: String
+    
     
     public func data() throws -> Data{
         do {
@@ -22,11 +25,13 @@ public struct SecureCredentials : Codable {
         }
     }
     
-    public init(userId: String, userName: String, userPassword: String, firebaseUID: String) {
+    public init(userId: String, userName: String, userPassword: String, firebaseUID: String,gToken:String,fbToken:String) {
         self.userId = userId
         self.userPassword = userPassword
         self.userName = userName
         self.firebaseUID = firebaseUID
+        self.gToken = gToken
+        self.fbToken = fbToken
     }
     
     public init(data: Data) throws {
