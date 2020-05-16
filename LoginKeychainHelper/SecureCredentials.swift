@@ -8,10 +8,10 @@ import Foundation
 public struct SecureCredentials : Codable {
     public var userId: String
     public var userName: String
-    public var userPassword: String
+    public var userPassword: String?
     public var firebaseUID: String
-    public var gToken: String
-    public var fbToken: String
+    public var gToken: String?
+    public var fbToken: String?
     
     
     public func data() throws -> Data{
@@ -25,13 +25,20 @@ public struct SecureCredentials : Codable {
         }
     }
     
-    public init(userId: String, userName: String, userPassword: String, firebaseUID: String,gToken:String,fbToken:String) {
+    public init(userId: String, userName: String, userPassword: String?, firebaseUID: String,gToken:String?,fbToken:String?) {
         self.userId = userId
-        self.userPassword = userPassword
         self.userName = userName
         self.firebaseUID = firebaseUID
-        self.gToken = gToken
-        self.fbToken = fbToken
+        if let gToken = gToken {
+             self.gToken = gToken
+        }
+        if let fbToken = fbToken {
+             self.fbToken = fbToken
+        }
+        if let userPassword = userPassword {
+             self.userPassword = userPassword
+        }
+        
     }
     
     public init(data: Data) throws {

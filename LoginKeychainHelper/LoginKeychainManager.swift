@@ -18,7 +18,7 @@ public class LoginKeychainManager {
     
     public init() { }
     
-    public func createKeychainItem(username: String, userId: String, password: String, firebaseUID: String,gToken:String,fbToken:String) throws {
+    public func createKeychainItem(username: String, userId: String, password: String?, firebaseUID: String,gToken:String?,fbToken:String?) throws {
         do {
             let secureCredentialsData = try SecureCredentials(userId: userId, userName: username, userPassword: password, firebaseUID: firebaseUID,gToken:gToken,fbToken:fbToken).data()
             let query: [String: Any] = [kSecClassKey: kSecClassGenericPassword,
